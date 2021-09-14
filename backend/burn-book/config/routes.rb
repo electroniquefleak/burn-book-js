@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :confessions
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :comments, only: [:create]
+  resources :confessions, only: [:index, :create, :show]
 end
