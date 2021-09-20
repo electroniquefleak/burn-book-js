@@ -2,9 +2,8 @@ class Api {
     constructor(api){
         this.api = api
     }
-    getAllConfessions = () => {
+    getAllConfessions = () => fetch(this.api + "/confessions", ).then(res => res.json().catch(error => console.log(error)))
     
-    }
     createConfession = (confession) => {
         return fetch(this.api + "/confessions", {
             method: "POST",
