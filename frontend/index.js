@@ -2,7 +2,7 @@ const api = new Api("http://localhost:3000");
 
 document.getElementById("confession-form").addEventListener("submit", handleSubmit);
 
-const handleSubmit = event => {
+function handleSubmit(event) {
     event.preventDefault();
     const newConfession = {
         title: event.target.title.value,
@@ -10,5 +10,6 @@ const handleSubmit = event => {
     }
     api.createConfession(newConfession).then(confession => {
         console.log("new confession in the DB:", confession);
+        document.getElementById("confession-form").reset();
     })
 }
