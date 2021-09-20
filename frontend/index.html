@@ -13,8 +13,17 @@
         <img src="" alt="burn book cover image" >
     </header>
     <section class="add-confession">
-        <form action="" method="post">
-            <h2>Make a confession</h2>
+        <form>
+            <h2>Make a confession:</h2>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">    
+            </div>
+            <div>
+                <label for="body">Confession:</label>
+                <input type="text" id="body" name="body">
+            </div>
+            <button type="submit">Confess!</button>
         </form>
     </section>
     <section class="all-confessions-container"></section>
