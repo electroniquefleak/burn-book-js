@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h1 align="center">:lips:Paragon Painting & Waterproofing (JavaScript Portfolio Project)</h1>
+  <h1 align="center">:lips: Burn Book (JavaScript Portfolio Project)</h1>
   </a>
 
   <p align="center">
