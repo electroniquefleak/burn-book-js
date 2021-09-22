@@ -9,7 +9,27 @@ form {
     padding: 10px;
     border: solid black 3px;
     border-radius: 10px;
+    text-align: center;
+    font-family: Futura;
 }
 form h2 {
     text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+button {
+    border-radius: 8px;
+}
+
+input {
+    border-radius: 8px;
+    margin: 0.5rem;
+}
+
+textarea {
+    margin: 0.5rem;
+    border-radius: 8px;
 }
