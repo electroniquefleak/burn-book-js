@@ -13,3 +13,5 @@ function handleSubmit(event) {
         document.getElementById("confession-form").reset();
     })
 }
+
+Confession.getAllConfessions();
