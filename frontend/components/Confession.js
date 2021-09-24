@@ -21,10 +21,28 @@ class Confession {
         document.querySelector(".all-confessions-container").prepend(confessionCard);
     }
 
+    renderComments = comments => {
+        comments.forEach(comment => {
+            const newComment = new Comment(comment);
+            //newComment.
+        })
+    }
+
     fetchShow = id => {
         api.getConfessionComments(id)
             .then(confession => {
-                const comments = confession.comments;
+                //renderForm pass in the id
+                const confessionCard = document.querySelector(`[data-id = '${id}']`);
+                const commentsContainer = document.createElement('div');
+                commentsContainer.classList.add('comments-container')
+                confessionCard.append(commentsContainer);
+                if (confession.comments.length > 0) {
+                    this.renderComments(confession.comments);
+                } else {
+                    const noComment = document.createElement('h3');
+                    noComment.textContent = "No comments, yet.";
+                    commentsContainer.append(noComment);
+                }
             })
             .catch(error => console.log(error));
     }
