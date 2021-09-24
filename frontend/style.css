@@ -11,6 +11,7 @@ form {
     border-radius: 10px;
     text-align: center;
     font-family: Futura;
+    background-color: #ff00f1
 }
 form h2 {
     text-align: center;
@@ -22,6 +23,14 @@ header {
 
 button {
     border-radius: 8px;
+    padding: 10px;
+    transition-duration: 0.4s;
+    background-color: white;
+}
+
+button:hover {
+    background-color: #ff4fe9   ;
+    color: black;
 }
 
 input {
@@ -32,4 +41,14 @@ input {
 textarea {
     margin: 0.5rem;
     border-radius: 8px;
+}
+
+div.confession-card {
+    margin: 1rem;
+    padding: 10px;
+    border: solid black 3px;
+    background-color: #ff0034;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Futura;
 }

@@ -9,7 +9,7 @@ function handleSubmit(event) {
         body: event.target.body.value
     }
     api.createConfession(newConfession).then(confession => {
-        console.log("new confession in the DB:", confession);
+        console.log("New confession in the DB:", confession);
         document.getElementById("confession-form").reset();
     })
 }
