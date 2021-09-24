@@ -4,14 +4,17 @@ document.getElementById("confession-form").addEventListener("submit", handleSubm
 
 function handleSubmit(event) {
     event.preventDefault();
-    const newConfession = {
+    const confessionData = {
         title: event.target.title.value,
         body: event.target.body.value
     }
-    api.createConfession(newConfession).then(confession => {
-        console.log("New confession in the DB:", confession);
-        document.getElementById("confession-form").reset();
-    })
+    api.createConfession(confessionData)
+        .then(confession => {
+            document.getElementById("confession-form").reset();
+            const newConfession = new Confession(confession)
+            newConfession.renderCard();
+        })
+        .catch(error => console.log(error))
 }
 
 Confession.getAllConfessions();
