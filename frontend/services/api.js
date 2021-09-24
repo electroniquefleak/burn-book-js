@@ -17,4 +17,7 @@ class Api {
         .then(res => res.json())
         .catch(error => console.log(error))
     }
+    getConfessionComments = id => fetch(this.api + "/confessions/" + id)
+        .then(res => res.json())
+        .catch(error => console.log(error));
 }

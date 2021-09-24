@@ -17,8 +17,16 @@ class Confession {
         `;
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
-        //confessionCard.addEventListener("click", this.fetchShow())
+        confessionCard.addEventListener("click", () => this.fetchShow(id))
         document.querySelector(".all-confessions-container").prepend(confessionCard);
+    }
+
+    fetchShow = id => {
+        api.getConfessionComments(id)
+            .then(confession => {
+                const comments = confession.comments;
+            })
+            .catch(error => console.log(error));
     }
 
     static getAllConfessions = () => {
