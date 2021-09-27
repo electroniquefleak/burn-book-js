@@ -14,21 +14,23 @@
     <header>
         <img src="../frontend/assets/images/graphic-header.png" alt="BURN BOOK" >
     </header>
-    <section class="add-confession">
-        <form id="confession-form">
-            <h2>Make a confession:</h2>
-            <div>
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title">    
-            </div>
-            <div>
-                <label for="body">Confession:</label><br>
-                <textarea name="body" id="body" cols="30" rows="10"></textarea>
-            </div>
-            <button type="submit">Confess!</button>
-        </form>
-    </section>
-    <section class="all-confessions-container"></section>
+    <div id="wrapper">
+        <aside class="add-confession">
+            <form id="confession-form">
+                <h2>Make a confession:</h2>
+                <div>
+                    <label for="title">Title:</label><br>
+                    <input type="text" id="title" name="title">    
+                </div>
+                <div>
+                    <label for="body">Confession:</label><br>
+                    <textarea name="body" id="body" cols="20" rows="10"></textarea>
+                </div>
+                <button type="submit">Confess!</button>
+            </form>
+        </aside>
+        <main class="all-confessions-container"></main>
+    </div>
     <script src="./index.js"></script>
 </body>
 </html>

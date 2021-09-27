@@ -1,8 +1,20 @@
 body, html {
     background-color: #ff0078;
 }
-section {
+#wrapper {
+    display: flex;
+}
+aside {
+    margin: 1rem;
+    width: 25%;
+    position: sticky;
+    position: -webkit-sticky;
+    align-self: flex-start;
+    top: 0;
+}
+main {
     margin: 3rem;
+    width: 100%;
 }
 form {
     margin: 1rem;
