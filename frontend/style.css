@@ -72,3 +72,6 @@ div.confession-card {
     border: solid black 3px;
     border-radius: 10px;
 }
+.hide {
+    visibility: hidden;
+}
