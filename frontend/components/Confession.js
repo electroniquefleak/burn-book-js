@@ -17,7 +17,12 @@ class Confession {
         `;
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
-        confessionCard.addEventListener("click", () => this.fetchShow(id), {once: true})
+        confessionCard.addEventListener("click", () => {
+            document.getElementById("confession-form").classList.add('hide');
+            document.getElementById("comment-form").classList.remove('hide');
+            document.getElementById('confession_id').value = id;
+            this.fetchShow(id)
+        }, {once: true});
         document.querySelector(".all-confessions-container").prepend(confessionCard);
     }
 
