@@ -52,3 +52,11 @@ div.confession-card {
     text-align: center;
     font-family: Futura;
 }
+
+.comments-container {
+    background-color: blueviolet;
+    margin: 1rem;
+    padding: 10px;
+    border: solid black 3px;
+    border-radius: 10px;
+}

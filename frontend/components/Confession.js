@@ -17,14 +17,14 @@ class Confession {
         `;
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
-        confessionCard.addEventListener("click", () => this.fetchShow(id))
+        confessionCard.addEventListener("click", () => this.fetchShow(id), {once: true})
         document.querySelector(".all-confessions-container").prepend(confessionCard);
     }
 
     renderComments = comments => {
         comments.forEach(comment => {
             const newComment = new Comment(comment);
-            //newComment.
+            newComment.renderCommentCard();
         })
     }
 
@@ -33,6 +33,9 @@ class Confession {
             .then(confession => {
                 //renderForm pass in the id
                 const confessionCard = document.querySelector(`[data-id = '${id}']`);
+                const commentsTitle = document.createElement('h3');
+                commentsTitle.textContent = "Comments:";
+                confessionCard.append(commentsTitle);
                 const commentsContainer = document.createElement('div');
                 commentsContainer.classList.add('comments-container')
                 confessionCard.append(commentsContainer);
