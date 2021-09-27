@@ -2,10 +2,9 @@ class CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        @comment.confession_id = params[:confession_id]
         if @comment.save
             puts "Comment added!"
-            render json: @confession
+            render json: @comment
         else
             puts "Error: failed to create comment."
         end
@@ -14,7 +13,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:confession).permit(:body, :confession_id)
+        params.require(:comment).permit(:body, :confession_id)
     end
 
 end
