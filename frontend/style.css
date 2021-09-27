@@ -66,12 +66,12 @@ div.confession-card {
     cursor: pointer;
 }
 
-.comments-container {
+.comment-card, .no-comment {
     background-color: blueviolet;
     margin: 1rem;
     padding: 10px;
     border: solid black 3px;
-    border-radius: 10px;
+    border-radius: 10px; 
 }
 .hide {
     display: none;

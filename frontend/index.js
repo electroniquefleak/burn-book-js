@@ -28,7 +28,7 @@ function handleCommentSubmit(event) {
             document.getElementById("comment-form").reset();
             const newComment = new Comment(comment)
             newComment.renderCommentCard();
-            document.getElementById('no-comment').remove();
+            document.querySelector(`[data-id = '${comment.confession_id}'] .no-comment`).remove();
         })
         .catch(error => console.log(error))
 }

@@ -18,8 +18,7 @@ class Confession {
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
         confessionCard.addEventListener("click", () => {
-            document.getElementById("confession-form").classList.add('hide');
-            document.getElementById("comment-form").classList.remove('hide');
+            this.switchForms();
             document.getElementById('confession_id').value = id;
             this.fetchShow(id)
         }, {once: true});
@@ -36,24 +35,36 @@ class Confession {
     fetchShow = id => {
         api.getConfessionComments(id)
             .then(confession => {
-                //renderForm pass in the id
                 const confessionCard = document.querySelector(`[data-id = '${id}']`);
                 const commentsTitle = document.createElement('h3');
+                const commentsWrapper = document.createElement('div');
+                commentsWrapper.classList.add('comments-wrapper');
+                confessionCard.append(commentsWrapper);
                 commentsTitle.textContent = "Comments:";
-                confessionCard.append(commentsTitle);
+                commentsWrapper.append(commentsTitle);
                 const commentsContainer = document.createElement('div');
                 commentsContainer.classList.add('comments-container')
-                confessionCard.append(commentsContainer);
+                commentsWrapper.append(commentsContainer);
+                confessionCard.addEventListener("click", () => {
+                    commentsWrapper.classList.toggle('hide')
+                    this.switchForms();
+                    document.getElementById('confession_id').value = id;
+                });
                 if (confession.comments.length > 0) {
                     this.renderComments(confession.comments);
                 } else {
                     const noComment = document.createElement('h3');
-                    noComment.id = "no-comment";
+                    noComment.classList.add('no-comment');
                     noComment.textContent = "No comments, yet.";
                     commentsContainer.append(noComment);
                 }
             })
             .catch(error => console.log(error));
+    }
+
+    switchForms = () => {
+        document.getElementById("confession-form").classList.toggle('hide');
+        document.getElementById("comment-form").classList.toggle('hide');
     }
 
     static getAllConfessions = () => {
