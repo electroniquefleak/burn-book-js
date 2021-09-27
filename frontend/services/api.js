@@ -6,7 +6,7 @@ class Api {
         .then(res => res.json())
         .catch(error => console.log(error));
     
-    createConfession = (confession) => {
+    createConfession = confession => {
         return fetch(this.api + "/confessions", {
             method: "POST",
             headers: {
@@ -20,4 +20,16 @@ class Api {
     getConfessionComments = id => fetch(this.api + "/confessions/" + id)
         .then(res => res.json())
         .catch(error => console.log(error));
+
+    createComment = comment => {
+        return fetch(this.api + "/comments", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(comment),
+        })
+        .then(res => res.json())
+        .catch(error => console.log(error))
+    }
 }

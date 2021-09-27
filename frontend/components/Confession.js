@@ -48,6 +48,7 @@ class Confession {
                     this.renderComments(confession.comments);
                 } else {
                     const noComment = document.createElement('h3');
+                    noComment.id = "no-comment";
                     noComment.textContent = "No comments, yet.";
                     commentsContainer.append(noComment);
                 }
