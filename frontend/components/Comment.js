@@ -7,7 +7,7 @@ class Comment {
         const commentCard = document.createElement('div');
         commentCard.innerHTML = `
         <p>${body}</p>
-        <legend>Commented on ${created_at}.</legend>
+        <legend>Commented on ${dateFormat(created_at)}.</legend>
     `;
     commentCard.classList.add('comment-card');
     document.querySelector(`[data-id = '${confession_id}'] div.comments-container`).prepend(commentCard);

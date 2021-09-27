@@ -13,7 +13,7 @@ class Confession {
         confessionCard.innerHTML = `
             <h2>${title}</h2>
             <p>${body}</p>
-            <legend>Confessed on ${created_at}.</legend>
+            <legend>Confessed on ${dateFormat(created_at)}.</legend>
         `;
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
