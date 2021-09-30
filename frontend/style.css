@@ -64,6 +64,7 @@ div.confession-card {
     text-align: center;
     font-family: Futura;
     cursor: pointer;
+    transition: all 1s ease-in;
 }
 
 .comment-card, .no-comment {
@@ -75,4 +76,10 @@ div.confession-card {
 }
 .hide {
     display: none;
+}
+div.confession-card.active {
+    background-color: darkred;
+    color: white;
+    transform: scale(1.1);
+    transition: all 1s ease-in;
 }

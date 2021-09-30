@@ -40,6 +40,7 @@ class Confession {
                 const confessionCard = document.querySelector(`[data-id = '${id}']`);
                 const commentsTitle = document.createElement('h3');
                 const commentsWrapper = document.createElement('div');
+                confessionCard.classList.add('active');
                 commentsWrapper.classList.add('comments-wrapper');
                 confessionCard.append(commentsWrapper);
                 commentsTitle.textContent = "Comments:";
@@ -51,6 +52,14 @@ class Confession {
                     commentsWrapper.classList.toggle('hide')
                     this.switchForms();
                     document.getElementById('confession_id').value = id;
+                    confessionCard.classList.toggle('active')
+                });
+                window.addEventListener("click", (e) => {
+                    if (e.target !== confessionCard) {
+                        confessionCard.classList.remove('active');
+                        commentsWrapper.classList.add('hide');
+                        this.switchForms();
+                    }
                 });
                 if (confession.comments.length > 0) {
                     this.renderComments(confession.comments);
