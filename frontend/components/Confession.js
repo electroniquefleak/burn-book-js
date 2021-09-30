@@ -18,7 +18,9 @@ class Confession {
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
         confessionCard.addEventListener("click", () => {
-            this.switchForms();
+            if (document.getElementById("comment-form").classList.contains("hide")) {
+                this.switchForms();
+            }
             document.getElementById('confession_id').value = id;
             this.fetchShow(id)
         }, {once: true});
