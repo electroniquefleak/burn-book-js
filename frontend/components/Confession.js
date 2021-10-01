@@ -18,9 +18,7 @@ class Confession {
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
         confessionCard.addEventListener("click", () => {
-            if (document.getElementById("comment-form").classList.contains("hide")) {
-                this.switchForms();
-            }
+            this.hideConfessionFormShowCommentForm();
             document.getElementById('confession_id').value = id;
             this.fetchShow(id)
         }, {once: true});
@@ -40,6 +38,10 @@ class Confession {
                 const confessionCard = document.querySelector(`[data-id = '${id}']`);
                 const commentsTitle = document.createElement('h3');
                 const commentsWrapper = document.createElement('div');
+                if (document.querySelector('.active')) {
+                    document.querySelector('.active .comments-wrapper').classList.add('hide');
+                    document.querySelector('.active').classList.remove('active');
+                }
                 confessionCard.classList.add('active');
                 commentsWrapper.classList.add('comments-wrapper');
                 confessionCard.append(commentsWrapper);
@@ -50,16 +52,13 @@ class Confession {
                 commentsWrapper.append(commentsContainer);
                 confessionCard.addEventListener("click", () => {
                     commentsWrapper.classList.toggle('hide')
-                    this.switchForms();
+                    if (document.querySelector('.active')) {
+                        this.hideCommentFormShowConfessionForm();
+                    } else {
+                        this.hideConfessionFormShowCommentForm();
+                    }
                     document.getElementById('confession_id').value = id;
                     confessionCard.classList.toggle('active')
-                });
-                window.addEventListener("click", (e) => {
-                    if (e.target !== confessionCard) {
-                        confessionCard.classList.remove('active');
-                        commentsWrapper.classList.add('hide');
-                        this.switchForms();
-                    }
                 });
                 if (confession.comments.length > 0) {
                     this.renderComments(confession.comments);
@@ -73,9 +72,13 @@ class Confession {
             .catch(error => console.log(error));
     }
 
-    switchForms = () => {
-        document.getElementById("confession-form").classList.toggle('hide');
-        document.getElementById("comment-form").classList.toggle('hide');
+    hideConfessionFormShowCommentForm = () => {
+        document.getElementById("confession-form").classList.add('hide');
+        document.getElementById("comment-form").classList.remove('hide');
+    }
+    hideCommentFormShowConfessionForm = () => {
+        document.getElementById("confession-form").classList.remove('hide');
+        document.getElementById("comment-form").classList.add('hide');
     }
 
     static getAllConfessions = () => {

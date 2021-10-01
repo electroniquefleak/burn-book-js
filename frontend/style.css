@@ -78,8 +78,8 @@ div.confession-card {
     display: none;
 }
 div.confession-card.active {
-    background-color: darkred;
+    background-color: #fc00ff;
     color: white;
     transform: scale(1.1);
-    transition: all 1s ease-in;
+    transition: all 0.45s ease-in;
 }
