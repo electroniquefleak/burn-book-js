@@ -50,15 +50,23 @@ class Confession {
                 const commentsContainer = document.createElement('div');
                 commentsContainer.classList.add('comments-container')
                 commentsWrapper.append(commentsContainer);
-                confessionCard.addEventListener("click", () => {
+                confessionCard.addEventListener("click", (event) => {
                     commentsWrapper.classList.toggle('hide')
                     if (document.querySelector('.active')) {
-                        this.hideCommentFormShowConfessionForm();
+                        if (event.currentTarget.classList.contains('active')) {                            
+                            this.hideCommentFormShowConfessionForm();
+                            document.querySelector('.active .comments-wrapper').classList.add('hide');
+                            document.querySelector('.active').classList.remove('active');
+                        } else {
+                            document.querySelector('.active .comments-wrapper').classList.add('hide');
+                            document.querySelector('.active').classList.remove('active');
+                            event.currentTarget.classList.add('active');
+                        }
                     } else {
                         this.hideConfessionFormShowCommentForm();
+                        confessionCard.classList.toggle('active')
                     }
                     document.getElementById('confession_id').value = id;
-                    confessionCard.classList.toggle('active')
                 });
                 if (confession.comments.length > 0) {
                     this.renderComments(confession.comments);
