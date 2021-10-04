@@ -86,6 +86,7 @@ class Confession {
         document.getElementById("confession-form").classList.add('hide');
         document.getElementById("comment-form").classList.remove('hide');
     }
+    
     hideCommentFormShowConfessionForm = () => {
         document.getElementById("confession-form").classList.remove('hide');
         document.getElementById("comment-form").classList.add('hide');
