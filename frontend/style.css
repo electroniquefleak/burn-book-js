@@ -1,9 +1,11 @@
 body, html {
-    background-color: #ff0078;
+    background-image: linear-gradient(to bottom right, #ff00f1, #ff0078, #ff0034);
 }
+
 #wrapper {
     display: flex;
 }
+
 aside {
     margin: 1rem;
     width: 25%;
@@ -12,10 +14,16 @@ aside {
     align-self: flex-start;
     top: 0;
 }
+
+#comment-form {
+    color: white;
+}
+
 main {
     margin: 3rem;
     width: 100%;
 }
+
 form {
     margin: 1rem;
     padding: 10px;
@@ -23,14 +31,15 @@ form {
     border-radius: 10px;
     text-align: center;
     font-family: Futura;
-    background-color: #ff00f1
+    background-color: #ff00f1;
 }
+
 form h2 {
     text-align: center;
 }
 
 header {
-    text-align: center;
+    text-align: left;
 }
 
 button {
@@ -41,7 +50,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff4fe9   ;
+    background-color: #ff4fe9;
     color: black;
 }
 
@@ -65,21 +74,32 @@ div.confession-card {
     font-family: Futura;
     cursor: pointer;
     transition: all 1s ease-in;
+    position: relative;
+}
+.confession-card-title {
+    margin-top: -1.5rem;
 }
 
 .comment-card, .no-comment {
-    background-color: blueviolet;
     margin: 1rem;
     padding: 10px;
     border: solid black 3px;
     border-radius: 10px; 
+    background-image: linear-gradient(to bottom right, #ff0034, #ff0078, #ff00f1);
 }
+
 .hide {
     display: none;
 }
+
 div.confession-card.active {
     background-color: #fc00ff;
     color: white;
     transform: scale(1.1);
     transition: all 0.45s ease-in;
+}
+
+.avatar {
+    height: 135px;
+    width: 90px;
 }

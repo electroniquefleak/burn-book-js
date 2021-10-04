@@ -10,11 +10,13 @@ class Confession {
     renderCard = () => {
         const {id, title, body, created_at} = this.data;
         const confessionCard = document.createElement('div');
+        const avatar = avatars[Math.floor(Math.random()*avatars.length)];
         confessionCard.innerHTML = `
-            <h2>${title}</h2>
+            <img src=${avatar.src} alt=${avatar.name} class="avatar"/>
+            <h2 class="confession-card-title">${title}</h2>
             <p>${body}</p>
             <legend>Confessed on ${dateFormat(created_at)}.</legend>
-        `;
+            `;
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
         confessionCard.addEventListener("click", () => {
