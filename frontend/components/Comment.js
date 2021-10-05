@@ -1,7 +1,9 @@
 class Comment {
+    
     constructor(data){
         this.data = data;
     }
+
     renderCommentCard = () => {
         const {body, confession_id, created_at} = this.data;
         const commentCard = document.createElement('div');

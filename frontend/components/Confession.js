@@ -20,7 +20,7 @@ class Confession {
         confessionCard.classList.add('confession-card');
         confessionCard.dataset.id= id;
         confessionCard.addEventListener("click", () => {
-            this.hideConfessionFormShowCommentForm();
+            this.hideConfessionForm();
             document.getElementById('confession_id').value = id;
             this.fetchShow(id)
         }, {once: true});
@@ -56,7 +56,7 @@ class Confession {
                     commentsWrapper.classList.toggle('hide')
                     if (document.querySelector('.active')) {
                         if (event.currentTarget.classList.contains('active')) {                            
-                            this.hideCommentFormShowConfessionForm();
+                            this.hideCommentForm();
                             document.querySelector('.active .comments-wrapper').classList.add('hide');
                             document.querySelector('.active').classList.remove('active');
                         } else {
@@ -65,7 +65,7 @@ class Confession {
                             event.currentTarget.classList.add('active');
                         }
                     } else {
-                        this.hideConfessionFormShowCommentForm();
+                        this.hideConfessionForm();
                         confessionCard.classList.toggle('active')
                     }
                     document.getElementById('confession_id').value = id;
@@ -82,12 +82,12 @@ class Confession {
             .catch(error => console.log(error));
     }
 
-    hideConfessionFormShowCommentForm = () => {
+    hideConfessionForm = () => {
         document.getElementById("confession-form").classList.add('hide');
         document.getElementById("comment-form").classList.remove('hide');
     }
     
-    hideCommentFormShowConfessionForm = () => {
+    hideCommentForm = () => {
         document.getElementById("confession-form").classList.remove('hide');
         document.getElementById("comment-form").classList.add('hide');
     }
