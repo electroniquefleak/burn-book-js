@@ -1,5 +1,4 @@
 const api = new Api("http://localhost:3000");
-
 document.getElementById("confession-form").addEventListener("submit", handleConfessionSubmit);
 document.getElementById("comment-form").addEventListener("submit", handleCommentSubmit);
 

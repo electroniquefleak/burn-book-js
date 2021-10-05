@@ -23,7 +23,9 @@
   </a>
 
   <p align="center">
-    (Project Description)
+    Welcome to Burn Book: A single-page application designed for users to anonymously create confessions. Additionally, anonymous users can comment on selected confessions, dictating user interaction.
+
+    The idea for the application came to me during a lecture on fetch, where my cohort lead joked about “making fetch happen”, a clear reference to the cult classic Mean Girls.
     <br />
         ·  </p>
 </p>
@@ -149,6 +151,7 @@ Project Link: [https://github.com/electroniquefleak/burn-book-js/](https://githu
 * [Sticky Kit](http://leafo.net/sticky-kit)
 * [JVectorMap](http://jvectormap.com)
 * [Font Awesome](https://fontawesome.com)
+* [Mean Girls Avatars & Header](https://instagram.com/idk_rs_)
 
 
 
