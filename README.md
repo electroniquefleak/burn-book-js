@@ -24,7 +24,6 @@
 
   <p align="center">
     Welcome to Burn Book: A single-page application designed for users to anonymously create confessions. Additionally, anonymous users can comment on selected confessions, dictating user interaction.
-
     The idea for the application came to me during a lecture on fetch, where my cohort lead joked about “making fetch happen”, a clear reference to the cult classic Mean Girls.
 </p>
 
